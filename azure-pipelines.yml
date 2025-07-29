@@ -8,4 +8,4 @@ stages:
   jobs:
     - job: ProductionsJob
       steps:
-      - bash: echo $(environment)
+      - bash: echo $(abc)
