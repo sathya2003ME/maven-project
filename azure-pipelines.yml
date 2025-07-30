@@ -4,8 +4,16 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 stages:
-- stage: ProdDeploy
+- stage: Build
   jobs:
-    - job: ProductionsJob
+    - job: firstjob
       steps:
-      - bash: echo $(enviornment)
+      - bash: echo Build First Job
+      - bash: echo $(Pipeline.Workspace)
+      - bash: echo $(Build.BuildNumber)
+      - bash: echo $(Build.BuildId)
+      - bash: echo $(Build.SourceBranchName)
+      - bash: echo $(Build.SourcesDirectory)
+      - bash: echo $(System.DefaultWorkingDirectory)
+      - bash: ls -r  $(System.DefaultWorkingDirectory)
+      - bash: echo $(Build.ArtifactStagingDirectory)
